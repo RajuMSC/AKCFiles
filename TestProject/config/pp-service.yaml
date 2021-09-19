@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pp-service
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 12101
+    nodePort: 30008
+  selector:
+    app: pp-deployment
