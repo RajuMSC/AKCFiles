@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: pp-deployment
-        image: cregdva2renphubsvc0001.azurecr.io/postprocessor-ws:0.1.3
+        image: cregdva2renphubsvc0001.azurecr.io/postprocessor-ws:0.1.4
         ports:
         - containerPort: 12131
           protocol: TCP
