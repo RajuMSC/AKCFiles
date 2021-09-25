@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: echo-deployment
+  name: echo-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echo-deployment
+  template:
+    metadata:
+      labels:
+        app: echo-deployment
+    spec:
+      containers:
+      - name: echo-deployment
+        image: cregdva2renphubsvc0001.azurecr.io/echoserver:0.1.0
+        ports:
+        - containerPort: 20020
+          protocol: TCP
+        env:
+        - name: TCPPORT
+          value: "20020"
+        resources:
+          requests:
+            memory: "50Mi"
+            cpu: 0.1
+          limits:
+            memory: "50Mi"
+            cpu: 0.1
+      nodeSelector: 
+        name: knode1
