@@ -38,7 +38,7 @@ spec:
             cpu: "1"
             memory: 4Gi
       nodeSelector:
-        agentpool: npat00001
+        name: knode1
 ---
 apiVersion: v1
 kind: Service
